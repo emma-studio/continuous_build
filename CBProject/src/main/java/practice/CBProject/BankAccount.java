@@ -11,8 +11,10 @@ public class BankAccount
     
     public double debit(double amount)
     {
-    	if (this.balance < amount || amount < 0)
+    	if (amount < 0)
     		return 0;
+    	if (this.balance < amount)
+    		amount = this.balance;
     	this.balance -= amount;
     	return amount;
     }

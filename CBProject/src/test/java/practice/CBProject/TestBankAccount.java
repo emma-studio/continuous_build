@@ -12,12 +12,21 @@ import org.junit.runner.RunWith;
 @RunWith(JUnitPlatform.class)
 public class TestBankAccount
 {
-    @DisplayName("Test BankAccount with Debit")
+    @DisplayName("Test BankAccount for Debit with sufficient balance")
     @Test
-    public void testDebitWithSufficientFunds()
+    public void testDebitWithSufficientBalance()
     {
 	    BankAccount account = new BankAccount(100);
 	    double amount = account.debit(40);
 	    Assertions.assertEquals(40.0, amount);
+    }
+    
+    @DisplayName("Test BankAccount for Debit with insufficient balance")
+    @Test
+    public void testDebitWithInsufficientBalance()
+    {
+    	BankAccount account = new BankAccount(100);
+    	double amount = account.debit(200);
+    	Assertions.assertEquals(100.0, amount);
     }
 }
