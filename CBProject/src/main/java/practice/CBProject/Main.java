@@ -6,7 +6,7 @@ public class Main {
 		BankAccount bankAccount = new BankAccount(100);
 		System.out.println(bankAccount.getBalance());
 		
-		bankAccount.debit(10);
+		bankAccount.debit(20);
 		System.out.println(bankAccount.getBalance());
 	}
 }
