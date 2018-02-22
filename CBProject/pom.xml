@@ -23,5 +23,41 @@
       <version>5.0.1</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+    	<groupId>org.junit.jupiter</groupId>
+    	<artifactId>junit-jupiter-api</artifactId>
+    	<version>5.0.1</version>
+    	<scope>test</scope>
+    </dependency>
+    <dependency>
+    	<groupId>org.junit.platform</groupId>
+    	<artifactId>junit-platform-runner</artifactId>
+    	<version>1.0.1</version>
+    </dependency>
   </dependencies>
+  
+  <build>
+  	<plugins>
+  		<plugin>
+  			<groupId>org.jacoco</groupId>
+  			<artifactId>jacoco-maven-plugin</artifactId>
+  			<version>0.7.9</version>
+  			<executions>
+  				<execution>
+  					<id>pre-unit-test</id>
+  					<goals>
+  						<goal>prepare-agent</goal>
+  					</goals>
+  				</execution>
+  				<execution>
+  					<id>post-unit-test</id>
+  					<phase>test</phase>
+  					<goals>
+  						<goal>report</goal>
+  					</goals>
+  				</execution>
+  			</executions>
+  		</plugin>
+  	</plugins>
+  </build>
 </project>
